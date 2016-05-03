@@ -16,19 +16,19 @@ Animation 01 - [NavigationBarAnimation](https://github.com/larrynatalicio/15Days
 
 Animation 02 - [LockScreenAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2002%20-%20LockScreenAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2002%20-%20LockScreenAnimation/LockScreenAnimation.gif)
 
 Animation 03 - [MapLocationAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2003%20-%20MapLocationAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2003%20-%20MapLocationAnimation/MapLocationAnimation.gif)
 
 Animation 04 - [LoadingDotsAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2004%20-%20LoadingDotsAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2004%20-%20LoadingDotsAnimation/LoadingDotsAnimation.gif)
 
 Animation 05 - [UnderlineAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2005%20-%20UnderlineAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2005%20-%20UnderlineAnimation/UnderlineAnimation.gif)
 
 Animation 06 - [StretchyHeaderAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2006%20-%20StretchyHeaderAnimation)
 
@@ -36,23 +36,23 @@ Animation 06 - [StretchyHeaderAnimation](https://github.com/larrynatalicio/15Day
 
 Animation 07 - [ProgressAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2007%20-%20ProgressAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2007%20-%20ProgressAnimation/ProgressAnimation.gif)
 
 Animation 08 - [GradientAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2008%20-%20GradientAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2008%20-%20GradientAnimation/GradientAnimation.gif)
 
 Animation 09 - [PullToRefreshAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2009%20-%20PullToRefreshAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2009%20-%20PullToRefreshAnimation/PullToRefreshAnimation.gif)
 
 Animation 10 - [SecretTextAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2010%20-%20SecretTextAnimation)
 
-![Alt text]()
+![Alt text](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/raw/master/Animation%2010%20-%20SecretTextAnimation/SecretTextAnimation.gif)
 
 Animation 11 - [GifAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2011%20-%20GifAnimation)
 
-![Alt text]()
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2011%20-%20GifAnimation/GifAnimation.gif)
 
 
 ## Resources I Learn From ##
