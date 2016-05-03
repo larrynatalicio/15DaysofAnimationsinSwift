@@ -1,0 +1,6 @@
+framework module Pods_GifAnimation {
+  umbrella header "Pods-GifAnimation-umbrella.h"
+
+  export *
+  module * { export * }
+}

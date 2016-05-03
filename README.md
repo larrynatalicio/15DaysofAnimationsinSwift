@@ -55,7 +55,7 @@ Animation 11 - [GifAnimation]()
 ![Alt text]()
 
 
-## Resources I Learn From ##	
+## Resources I Learn From ##
 
 [Natasha The Robot](https://www.natashatherobot.com)
 

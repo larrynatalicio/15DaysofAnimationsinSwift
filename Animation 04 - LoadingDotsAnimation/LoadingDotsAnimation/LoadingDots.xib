@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingDots" customModule="LoadingDotsAnimation" customModuleProvider="target">
+            <connections>
+                <outlet property="dotOne" destination="Z6k-bW-MbR" id="FsC-ZC-RxG"/>
+                <outlet property="dotThree" destination="dBw-Xa-s3P" id="xpJ-wC-dPF"/>
+                <outlet property="dotTwo" destination="8iT-c0-qxv" id="Axd-rz-Tk4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TQX-5i-hte"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ufH-AO-lcJ">
+                    <rect key="frame" x="20" y="20" width="126" height="70"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-aO-bWH">
+                            <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GfG-uq-YPG">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="126" id="NXd-Jj-rdu"/>
+                                        <constraint firstAttribute="height" constant="34" id="z4X-bE-Ui5"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ABt-Wh-JYr">
+                            <rect key="frame" x="42" y="60" width="42" height="10"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-bW-MbR">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="sPe-sJ-TwG"/>
+                                        <constraint firstAttribute="width" constant="10" id="wG9-gI-LJk"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-c0-qxv">
+                                    <rect key="frame" x="16" y="0.0" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="k4J-Zk-ron"/>
+                                        <constraint firstAttribute="width" constant="10" id="l29-Qr-oFB"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="dBw-Xa-s3P">
+                                    <rect key="frame" x="32" y="0.0" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="10" id="UVS-P3-YC8"/>
+                                        <constraint firstAttribute="height" constant="10" id="q6o-TH-lQB"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ufH-AO-lcJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GkB-YD-tkh"/>
+                <constraint firstItem="ufH-AO-lcJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kDE-vH-3yh"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="481" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dot" width="54" height="54"/>
+        <image name="logo" width="402" height="112"/>
+    </resources>
+</document>

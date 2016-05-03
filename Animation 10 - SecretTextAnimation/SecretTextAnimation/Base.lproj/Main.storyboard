@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JWo-XV-dio">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gF0-2p-7x4">
+            <objects>
+                <viewController id="JWo-XV-dio" customClass="ViewController" customModule="SecretTextAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gUC-3i-pul"/>
+                        <viewControllerLayoutGuide type="bottom" id="zWP-zC-D7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hcj-4s-q9M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIh-CY-Fos">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QIh-CY-Fos" secondAttribute="trailing" id="C4R-zf-DFT"/>
+                            <constraint firstItem="QIh-CY-Fos" firstAttribute="leading" secondItem="Hcj-4s-q9M" secondAttribute="leading" id="Q5p-vB-HTg"/>
+                            <constraint firstItem="QIh-CY-Fos" firstAttribute="top" secondItem="Hcj-4s-q9M" secondAttribute="top" id="aYe-lu-LQp"/>
+                            <constraint firstItem="zWP-zC-D7A" firstAttribute="top" secondItem="QIh-CY-Fos" secondAttribute="bottom" id="clc-cx-26r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="QIh-CY-Fos" id="kHB-1J-lPv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfH-Ao-0eM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="215"/>
+        </scene>
+    </scenes>
+</document>

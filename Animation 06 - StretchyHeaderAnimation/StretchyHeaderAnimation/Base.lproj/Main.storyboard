@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H0G-5l-OgH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="AzV-G2-Cdi">
+            <objects>
+                <tableViewController id="H0G-5l-OgH" customClass="ViewController" customModule="StretchyHeaderAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="v9f-jM-xpy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hpx-zr-sVo">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="castle" translatesAutoresizingMaskIntoConstraints="NO" id="NX0-X9-eco">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places to Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKZ-Hl-4I8">
+                                    <rect key="frame" x="16" y="255" width="162" height="29"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="uKZ-Hl-4I8" firstAttribute="leading" secondItem="hpx-zr-sVo" secondAttribute="leading" constant="16" id="0p8-eU-tsh"/>
+                                <constraint firstAttribute="bottom" secondItem="NX0-X9-eco" secondAttribute="bottom" id="1JC-zI-U0R"/>
+                                <constraint firstAttribute="bottom" secondItem="uKZ-Hl-4I8" secondAttribute="bottom" constant="16" id="afa-uA-IGt"/>
+                                <constraint firstAttribute="trailing" secondItem="NX0-X9-eco" secondAttribute="trailing" id="bUH-hg-CC7"/>
+                                <constraint firstItem="NX0-X9-eco" firstAttribute="leading" secondItem="hpx-zr-sVo" secondAttribute="leading" id="d18-HF-FtP"/>
+                                <constraint firstItem="NX0-X9-eco" firstAttribute="top" secondItem="hpx-zr-sVo" secondAttribute="top" id="zhX-Hl-973"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="sP6-c7-jg5" rowHeight="80" style="IBUITableViewCellStyleDefault" id="PLl-FT-Giy">
+                                <rect key="frame" x="0.0" y="328" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLl-FT-Giy" id="Rnp-uJ-DKe">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sP6-c7-jg5">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="79"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="0.44620037439675864" green="0.77555277770962694" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H0G-5l-OgH" id="2KZ-h5-Bfy"/>
+                            <outlet property="delegate" destination="H0G-5l-OgH" id="VbR-dn-piA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqu-2s-jnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="489"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="castle" width="2460" height="1820"/>
+    </resources>
+</document>
