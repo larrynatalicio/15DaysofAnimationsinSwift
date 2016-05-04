@@ -1,5 +1,6 @@
 ![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/github-cover-image.png)
 
+
 > Animation ~ the act of bringing to life.
 
 ## Overview ##
