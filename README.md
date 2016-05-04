@@ -11,7 +11,7 @@ Animations are something that I really like. Inspired by [Sam Lu](https://twitte
 
 ## Index & GIF Showcase ##
 
-Animation 01 - [NavigationBarAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2001%20-%20NavigationBarAnimation)
+Animation 01 - [NavigationBarAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/blob/master/Animation%2001%20-%20NavigationBarAnimation/NavigationBarAnimation.gif)
 
 ![Alt text](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/raw/master/Animation%2001%20-%20NavigationBarAnimation/NavigationBarAnimation.gif)
 
