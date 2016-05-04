@@ -13,7 +13,7 @@ Animations are something that I really like. Inspired by [Sam Lu](https://twitte
 
 Animation 01 - [NavigationBarAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/blob/master/Animation%2001%20-%20NavigationBarAnimation/NavigationBarAnimation.gif)
 
-![Alt text](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/raw/master/Animation%2001%20-%20NavigationBarAnimation/NavigationBarAnimation.gif)
+![Alt text](https://raw.githubusercontent.com/larrynatalicio/15DaysofAnimationsinSwift/master/Animation%2001%20-%20NavigationBarAnimation/NavigationBarAnimation.gif)
 
 Animation 02 - [LockScreenAnimation](https://github.com/larrynatalicio/15DaysofAnimationsinSwift/tree/master/Animation%2002%20-%20LockScreenAnimation)
 
