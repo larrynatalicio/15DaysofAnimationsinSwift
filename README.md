@@ -86,4 +86,6 @@ Animation 11 - [GifAnimation](https://github.com/larrynatalicio/15DaysofAnimatio
 
 ## Contact Me ##
 
+Twitter: [@LarryNatalicio](https://twitter.com/LarryNatalicio)
+
 LinkedIn: [Larry Natalicio](https://www.linkedin.com/in/larrynatalicio)
