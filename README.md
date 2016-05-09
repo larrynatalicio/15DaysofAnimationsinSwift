@@ -7,7 +7,7 @@
 
 I'm Larry Natalicio, an iOS developer.
 
-Animations are something that I really like. Inspired by [Sam Lu](https://twitter.com/samvlu)'s [100 Days of Swift](http://samvlu.com/index.html) and [Allen Wang](https://twitter.com/creativewang)’s [30 Days of Swift](https://github.com/allenwong/30DaysofSwift) projects, I decided dedicate 15 days to creating animations in Swift.
+Animations are something that I really like. Inspired by [Sam Lu](https://twitter.com/samvlu)'s [100 Days of Swift](http://samvlu.com/index.html) and [Allen Wang](https://twitter.com/creativewang)’s [30 Days of Swift](https://github.com/allenwong/30DaysofSwift) projects, I decided to dedicate 15 days to creating animations in Swift.
 
 ## Index & GIF Showcase ##
 
