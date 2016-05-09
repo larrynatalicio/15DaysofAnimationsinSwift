@@ -58,11 +58,12 @@ class ViewController: UIViewController {
         Therefore, I update the width constraint to this here.
         This also updates the constraint when the view rotates.
         */
-        for constraint in underlineView.constraints {
-            if constraint.identifier == Constants.ConstraintIdentifiers.widthConstraintIdentifier {
-                constraint.constant = (optionsBar.frame.width / 2.5)
+        
+        underlineView.constraints
+            .filter{$0.identifier == Constants.ConstraintIdentifiers.widthConstraintIdentifier}
+            .map{
+                $0.constant = (optionsBar.frame.width / 2.5)
                 self.view.layoutIfNeeded()
-            }
         }
     }
     
@@ -103,34 +104,32 @@ class ViewController: UIViewController {
         switch toSide {
         case .Left:
             
-            for constraint in underlineView.superview!.constraints {
-                if constraint.identifier == Constants.ConstraintIdentifiers.centerRightConstraintIdentifier {
-                    
-                    constraint.active = false
+            underlineView.superview?.constraints
+                .filter{$0.identifier == Constants.ConstraintIdentifiers.centerRightConstraintIdentifier}
+                .map{
+                    $0.active = false
                     
                     let leftButton = optionsBar.arrangedSubviews[0]
                     let centerLeftConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(leftButton.centerXAnchor)
                     centerLeftConstraint.identifier = Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier
                     
                     NSLayoutConstraint.activateConstraints([centerLeftConstraint])
-                }
             }
             
         case .Right:
-            
-            for constraint in underlineView.superview!.constraints {
-                if constraint.identifier == Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier {
-                    
-                    constraint.active = false
+        
+            underlineView.superview?.constraints
+                .filter{$0.identifier == Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier}
+                .map{
+                    $0.active = false
                     
                     let rightButton = optionsBar.arrangedSubviews[1]
                     let centerRightConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(rightButton.centerXAnchor)
                     centerRightConstraint.identifier = Constants.ConstraintIdentifiers.centerRightConstraintIdentifier
                     
                     NSLayoutConstraint.activateConstraints([centerRightConstraint])
-                    
-                }
             }
+            
         }
         
         UIView.animateWithDuration(0.6, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
