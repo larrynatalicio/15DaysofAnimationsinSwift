@@ -39,3 +39,16 @@ extension UIBezierPath {
     }
 }
 
+extension UIImage {
+    
+    enum Images: String {
+        case PullRefreshViewBackground = "pull-refresh-view-background"
+        case FlyingSaucer = "flying-saucer"
+    }
+    
+    convenience init?(image: Images) {
+        self.init(contentsOfFile: image.rawValue)
+    }
+}
+
+

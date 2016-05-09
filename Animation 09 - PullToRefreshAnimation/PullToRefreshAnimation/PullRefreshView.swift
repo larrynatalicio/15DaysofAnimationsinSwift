@@ -14,19 +14,9 @@ protocol PullRefreshViewDelegate {
 }
 
 @IBDesignable
-class PullRefreshView: UIView, UIScrollViewDelegate {
-    
-    // MARK: - Types
-    
-    struct Constants {
-        struct Images {
-            static let pullRefreshViewBackground = "pull-refresh-view-background"
-            static let flyingSaucer = "flying-saucer"
-        }
-    }
+class PullRefreshView: UIView {
     
     // MARK: - Properties
-    
     var delegate: PullRefreshViewDelegate?
     var scrollView: UIScrollView?
     var refreshing: Bool = false
@@ -35,15 +25,15 @@ class PullRefreshView: UIView, UIScrollViewDelegate {
     let flyingSaucerLayer = CALayer()
     var paths = [UIBezierPath]()
     
-    // MARK: - Initializers
     
+    // MARK: - Initializers
     init(frame: CGRect, scrollView: UIScrollView) {
         super.init(frame: frame)
         
         self.scrollView = scrollView
         
         // Add the background image.
-        let pullRefreshBackgroundImageView = UIImageView(image: UIImage(named: Constants.Images.pullRefreshViewBackground))
+        let pullRefreshBackgroundImageView = UIImageView(image: UIImage(image: .PullRefreshViewBackground))
         pullRefreshBackgroundImageView.frame = bounds
         pullRefreshBackgroundImageView.contentMode = .ScaleAspectFill
         pullRefreshBackgroundImageView.clipsToBounds = true
@@ -53,7 +43,7 @@ class PullRefreshView: UIView, UIScrollViewDelegate {
         paths = customPaths(frame: CGRect(x: 20, y: self.bounds.height / 5, width: self.bounds.width / 1.8, height: self.bounds.height / 1.5))
         
         // Add flying saucer image.
-        let flyingSaucerImage = UIImage(named: Constants.Images.flyingSaucer)!
+        guard let flyingSaucerImage = UIImage(image: .FlyingSaucer) else { return }
         flyingSaucerLayer.contents = flyingSaucerImage.CGImage
         flyingSaucerLayer.bounds = CGRect(x: 0.0, y: 0.0, width: flyingSaucerImage.size.width, height: flyingSaucerImage.size.height)
         let enterPath = paths[0]
@@ -66,23 +56,6 @@ class PullRefreshView: UIView, UIScrollViewDelegate {
         super.init(coder: aDecoder)
     }
 
-    // MARK: - UIScrollViewDelegate
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offsetY = CGFloat(max(-(scrollView.contentOffset.y + scrollView.contentInset.top), 0.0))
-        self.progress = min(max(offsetY / frame.size.height, 0.0), 1.0)
-
-        if !isRefreshing {
-            redrawFromProgress(self.progress)
-        }
-    }
-    
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if !isRefreshing && self.progress >= 1.0 {
-            delegate?.PullRefreshViewDidRefresh(self)
-            beginRefreshing()
-        }
-    }
     
     // MARK: - Convenience
     
@@ -215,6 +188,25 @@ class PullRefreshView: UIView, UIScrollViewDelegate {
         exitPath.usesEvenOddFillRule = true
         
         return [enterPath, exitPath]
+    }
+}
+
+extension PullRefreshView: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offsetY = CGFloat(max(-(scrollView.contentOffset.y + scrollView.contentInset.top), 0.0))
+        self.progress = min(max(offsetY / frame.size.height, 0.0), 1.0)
+        
+        if !isRefreshing {
+            redrawFromProgress(self.progress)
+        }
+    }
+    
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if !isRefreshing && self.progress >= 1.0 {
+            delegate?.PullRefreshViewDidRefresh(self)
+            beginRefreshing()
+        }
     }
 
 }
