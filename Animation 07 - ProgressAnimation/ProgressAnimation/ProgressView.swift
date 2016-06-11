@@ -82,14 +82,7 @@ class ProgressView: UIView {
     }
     
     func animateStroke() {
-        let fromValue = progressLayer.strokeEnd
         let toValue = curValue / range
-        
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = fromValue
-        animation.toValue = toValue
-        
-        progressLayer.addAnimation(animation, forKey: "stroke")
         progressLayer.strokeEnd = toValue
     }
 
