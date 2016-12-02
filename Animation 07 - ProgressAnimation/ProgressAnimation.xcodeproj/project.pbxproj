@@ -14,7 +14,6 @@
 		460985FE1CC047F200B66BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460985FC1CC047F200B66BE8 /* LaunchScreen.storyboard */; };
 		4609860A1CC04B2800B66BE8 /* Gallon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460986091CC04B2800B66BE8 /* Gallon.swift */; };
 		4609860C1CC04C9A00B66BE8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609860B1CC04C9A00B66BE8 /* ProgressView.swift */; };
-		46CC12C81CC09E3200F63A47 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC12C71CC09E3200F63A47 /* GlobalFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		460985FF1CC047F200B66BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460986091CC04B2800B66BE8 /* Gallon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallon.swift; sourceTree = "<group>"; };
 		4609860B1CC04C9A00B66BE8 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		46CC12C71CC09E3200F63A47 /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 				4609860D1CC04CA100B66BE8 /* Models */,
 				4609860E1CC04CA800B66BE8 /* Views */,
 				4609860F1CC058D000B66BE8 /* Controllers */,
-				46CC12C91CC09E3700F63A47 /* Helpers */,
 				46A3D83C1CD4766800D0844B /* Supporting Files */,
 			);
 			path = ProgressAnimation;
@@ -105,14 +102,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		46CC12C91CC09E3700F63A47 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				46CC12C71CC09E3200F63A47 /* GlobalFunctions.swift */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +134,7 @@
 				TargetAttributes = {
 					460985EF1CC047F200B66BE8 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -186,7 +176,6 @@
 			files = (
 				460985F61CC047F200B66BE8 /* ViewController.swift in Sources */,
 				4609860C1CC04C9A00B66BE8 /* ProgressView.swift in Sources */,
-				46CC12C81CC09E3200F63A47 /* GlobalFunctions.swift in Sources */,
 				460985F41CC047F200B66BE8 /* AppDelegate.swift in Sources */,
 				4609860A1CC04B2800B66BE8 /* Gallon.swift in Sources */,
 			);
@@ -308,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveNewLogic.ProgressAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -320,6 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveNewLogic.ProgressAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
