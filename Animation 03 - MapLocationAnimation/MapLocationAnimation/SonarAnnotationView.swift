@@ -26,10 +26,6 @@ class SonarAnnotationView: MKAnnotationView {
         startAnimation()
     }
     
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
     // MARK: - NSCoding
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +34,7 @@ class SonarAnnotationView: MKAnnotationView {
 
     // MARK: - Convenience
     
-    func sonar(beginTime: CFTimeInterval) {
+    func sonar(_ beginTime: CFTimeInterval) {
         // The circle in its smallest size.
         let circlePath1 = UIBezierPath(arcCenter: self.center, radius: CGFloat(3), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
 
@@ -47,16 +43,16 @@ class SonarAnnotationView: MKAnnotationView {
         
         // Configure the layer.
         let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = Constants.ColorPalette.green.CGColor
-        shapeLayer.fillColor = Constants.ColorPalette.green.CGColor
+        shapeLayer.strokeColor = Constants.ColorPalette.green.cgColor
+        shapeLayer.fillColor = Constants.ColorPalette.green.cgColor
         // This is the path that's visible when there'd be no animation.
-        shapeLayer.path = circlePath1.CGPath
+        shapeLayer.path = circlePath1.cgPath
         self.layer.addSublayer(shapeLayer)
         
         // Animate the path.
         let pathAnimation = CABasicAnimation(keyPath: "path")
-        pathAnimation.fromValue = circlePath1.CGPath
-        pathAnimation.toValue = circlePath2.CGPath
+        pathAnimation.fromValue = circlePath1.cgPath
+        pathAnimation.toValue = circlePath2.cgPath
         
         // Animate the alpha value.
         let alphaAnimation = CABasicAnimation(keyPath: "opacity")
@@ -70,12 +66,11 @@ class SonarAnnotationView: MKAnnotationView {
         animationGroup.animations = [pathAnimation, alphaAnimation]
         animationGroup.duration = 2.76
         animationGroup.repeatCount = FLT_MAX
-        animationGroup.delegate = self
-        animationGroup.removedOnCompletion = false
+        animationGroup.isRemovedOnCompletion = false
         animationGroup.fillMode = kCAFillModeForwards
         
         // Add the animation to the layer.
-        shapeLayer.addAnimation(animationGroup, forKey: "sonar")
+        shapeLayer.add(animationGroup, forKey: "sonar")
     }
     
     func startAnimation() {
