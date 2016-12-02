@@ -112,6 +112,7 @@
 				TargetAttributes = {
 					467EA97C1C87FC2E0020DFBB = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -270,6 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveNewLogic.LockScreenAnimation;
 				PRODUCT_NAME = LockScreenAnimation;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -282,6 +284,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveNewLogic.LockScreenAnimation;
 				PRODUCT_NAME = LockScreenAnimation;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

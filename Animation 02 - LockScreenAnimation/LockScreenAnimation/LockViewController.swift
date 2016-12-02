@@ -19,22 +19,22 @@ class LockViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         openLock()
     }
     
-    // MARK: Convenience
+    // MARK: - Convenience
     
     func openLock() {
-        UIView.animateWithDuration(0.4, delay: 5.0, options: [], animations: {
+        UIView.animate(withDuration: 0.4, delay: 5.0, options: [], animations: {
             
             // Rotate keyhole.
-            self.lockKeyhole.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            self.lockKeyhole.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
             
             }, completion: { _ in
-                UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
+                UIView.animate(withDuration: 0.5, delay: 0.2, options: [], animations: {
                     
                     // Open lock.
                     let yDelta = self.lockBorder.frame.maxY
@@ -54,7 +54,7 @@ class LockViewController: UIViewController {
     
     // MARK: - Status Bar
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }
