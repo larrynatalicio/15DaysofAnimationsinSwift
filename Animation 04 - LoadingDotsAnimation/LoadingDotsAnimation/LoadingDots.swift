@@ -50,21 +50,21 @@ class LoadingDots: UIView {
     }
     
     func loadNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName(), bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
     }
     
     func nibName() -> String {
-        return self.dynamicType.description().componentsSeparatedByString(".").last!
+        return type(of: self).description().components(separatedBy: ".").last!
     }
     
     // MARK: - Lifetime
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Convenience
@@ -73,30 +73,30 @@ class LoadingDots: UIView {
         
         // Make dots very small (practically invsisble) since
         // we want the animation to start from small to big.
-        dotOne.transform = CGAffineTransformMakeScale(0.01, 0.01)
-        dotTwo.transform = CGAffineTransformMakeScale(0.01, 0.01)
-        dotThree.transform = CGAffineTransformMakeScale(0.01, 0.01)
+        dotOne.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        dotTwo.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        dotThree.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         
-        UIView.animateWithDuration(0.6, delay: 0.0, options: [.Repeat, .Autoreverse], animations: {
-            self.dotOne.transform = CGAffineTransformIdentity
+        UIView.animate(withDuration: 0.6, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+            self.dotOne.transform = CGAffineTransform.identity
             }, completion: nil)
         
-        UIView.animateWithDuration(0.6, delay: 0.2, options: [.Repeat, .Autoreverse], animations: {
-            self.dotTwo.transform = CGAffineTransformIdentity
+        UIView.animate(withDuration: 0.6, delay: 0.2, options: [.repeat, .autoreverse], animations: {
+            self.dotTwo.transform = CGAffineTransform.identity
             }, completion: nil)
         
-        UIView.animateWithDuration(0.6, delay: 0.4, options: [.Repeat, .Autoreverse], animations: {
-            self.dotThree.transform = CGAffineTransformIdentity
+        UIView.animate(withDuration: 0.6, delay: 0.4, options: [.repeat, .autoreverse], animations: {
+            self.dotThree.transform = CGAffineTransform.identity
             }, completion: nil)
     }
     
     // MARK: - Notifications
     
     func registerForNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationDidBecomeActive(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationDidBecomeActive(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
-    func applicationDidBecomeActive(notification: NSNotification) {
+    func applicationDidBecomeActive(_ notification: Notification) {
         startAnimation()
     }
     
