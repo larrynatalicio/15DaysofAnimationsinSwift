@@ -16,7 +16,6 @@ class FadingLabel: CharacterLabel {
         get {
             return super.attributedText
         }
-        
         set {
             super.attributedText = newValue
             self.animateIn { (finished) in
@@ -25,35 +24,32 @@ class FadingLabel: CharacterLabel {
         }
     }
     
-    override func initialTextLayerAttributes(textLayer: CATextLayer) {
+    override func initialTextLayerAttributes(_ textLayer: CATextLayer) {
         textLayer.opacity = 0
     }
     
     // MARK: - Convenience
     
-    func animateIn(completion: ((finished: Bool) -> Void)?) {
-    
+    func animateIn(_ completion: ((_ finished: Bool) -> Void)?) {
         for textLayer in characterTextLayers {
+            let duration = (TimeInterval(arc4random() % 100) / 200.0) + 0.25
+            let delay = TimeInterval(arc4random() % 100) / 500.0
             
-            let duration = (NSTimeInterval(arc4random() % 100) / 200.0) + 0.25
-            let delay = NSTimeInterval(arc4random() % 100) / 500.0
-                        
             CLMLayerAnimation.animation(textLayer, duration: duration, delay: delay, animations: {
                 textLayer.opacity = 1
-                }, completion:nil)
+            }, completion: nil)
         }
-
     }
 
-    func animateOut(completion: ((finished: Bool) -> Void)?) {
+    func animateOut(_ completion: ((_ finished: Bool) -> Void)?) {
         var longestAnimation = 0.0
         var longestAnimationIndex = -1
         var index = 0
         
         for textLayer in oldCharacterTextLayers {
             
-            let duration = (NSTimeInterval(arc4random() % 100) / 200.0) + 0.25
-            let delay = NSTimeInterval(arc4random() % 100) / 500.0
+            let duration = (TimeInterval(arc4random() % 100) / 200.0) + 0.25
+            let delay = TimeInterval(arc4random() % 100) / 500.0
             
             if duration+delay > longestAnimation {
                 longestAnimation = duration + delay
@@ -61,17 +57,16 @@ class FadingLabel: CharacterLabel {
             }
             CLMLayerAnimation.animation(textLayer, duration: duration, delay: delay, animations: {
                 textLayer.opacity = 0
-                }, completion: { finished in
-                    textLayer.removeFromSuperlayer()
-                    if textLayer == self.oldCharacterTextLayers[longestAnimationIndex] {
-                        if let completionFunction = completion {
-                            completionFunction(finished: finished)
-                        }
+            }, completion: { finished in
+                textLayer.removeFromSuperlayer()
+                if textLayer == self.oldCharacterTextLayers[longestAnimationIndex] {
+                    if let completionFunction = completion {
+                        completionFunction(finished)
                     }
+                }
             })
             
             index += 1
         }
     }
-    
 }

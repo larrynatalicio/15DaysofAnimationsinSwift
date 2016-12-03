@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     @IBOutlet var backgroundImageView: UIImageView!
     
     var quoteLabel: FadingLabel!
-    let animationDuration: NSTimeInterval = 1.0
-    let switchingInterval: NSTimeInterval = 3.0
+    let animationDuration: TimeInterval = 1.0
+    let switchingInterval: TimeInterval = 3.0
     var currentIndex = 0
     
     let quotes = [
@@ -51,14 +51,14 @@ class ViewController: UIViewController {
 
     // MARK: - View Life Cycle
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupCharacterLabel()
         setupBackgroundImageView()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         animateBackgroundImageView()
@@ -75,8 +75,8 @@ class ViewController: UIViewController {
         
         CATransaction.setAnimationDuration(animationDuration)
         CATransaction.setCompletionBlock {
-            let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(self.switchingInterval * NSTimeInterval(NSEC_PER_SEC)))
-            dispatch_after(delay, dispatch_get_main_queue()) {
+            let delay = DispatchTime.now() + Double(Int64(self.switchingInterval * TimeInterval(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delay) {
                 self.animateBackgroundImageView()
             }
         }
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         transition.type = kCATransitionFade
         
         
-        backgroundImageView.layer.addAnimation(transition, forKey: kCATransition)
+        backgroundImageView.layer.add(transition, forKey: kCATransition)
         backgroundImageView.image = quotes[currentIndex].image
         
         CATransaction.commit()
@@ -107,27 +107,26 @@ class ViewController: UIViewController {
     func setupCharacterLabel() {
         quoteLabel = FadingLabel(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        quoteLabel.textAlignment = NSTextAlignment.Center
+        quoteLabel.textAlignment = NSTextAlignment.center
         quoteLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 30)
-        quoteLabel.textColor = UIColor.whiteColor()
-        quoteLabel.lineBreakMode = .ByWordWrapping
+        quoteLabel.textColor = UIColor.white
+        quoteLabel.lineBreakMode = .byWordWrapping
         quoteLabel.numberOfLines = 0
         
         self.view.addSubview(quoteLabel)
         
         // Constraints.
-        NSLayoutConstraint.activateConstraints([
-            quoteLabel.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor),
-            quoteLabel.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor),
-            quoteLabel.widthAnchor.constraintEqualToConstant(self.view.frame.width / 1.25)
+        NSLayoutConstraint.activate([
+            quoteLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            quoteLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            quoteLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.25)
             ])
     }
     
     // MARK: - Status Bar
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
-
 }
 

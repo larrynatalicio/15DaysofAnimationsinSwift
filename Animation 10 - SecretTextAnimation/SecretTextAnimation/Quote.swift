@@ -12,9 +12,9 @@ class Quote {
     
     // MARK: - Properties
     
-    var quote: String
-    var author: String
-    var image: UIImage
+    let quote: String
+    let author: String
+    let image: UIImage
     
     // MARK: - Initializers
     
