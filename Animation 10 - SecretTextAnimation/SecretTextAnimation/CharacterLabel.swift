@@ -24,7 +24,6 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
         get {
             return super.lineBreakMode
         }
-        
         set {
             textContainer.lineBreakMode = newValue
             super.lineBreakMode = newValue
@@ -36,7 +35,6 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
         get {
             return super.numberOfLines
         }
-        
         set {
             textContainer.maximumNumberOfLines = newValue
             super.numberOfLines = newValue
@@ -48,12 +46,10 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
         get {
             return super.bounds
         }
-        
         set {
             textContainer.size = newValue.size
             super.bounds = newValue
         }
-        
     }
     
     override var text: String! {
@@ -72,7 +68,6 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
             
             self.attributedText = attributedText
         }
-        
     }
     
     override var attributedText: NSAttributedString? {
@@ -88,13 +83,13 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
             oldCharacterTextLayers = [CATextLayer](characterTextLayers)
             textStorage.setAttributedString(newValue!)
         }
-        
     }
     
     // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupLayoutManager()
     }
     
@@ -102,6 +97,7 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         setupLayoutManager()
     }
     
@@ -109,6 +105,7 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setupLayoutManager()
     }
     
@@ -147,9 +144,7 @@ class CharacterLabel: UILabel, NSLayoutManagerDelegate {
                 }
             }
             
-            
             glyphRect.origin.y += location.y-(glyphRect.height/2)+(self.bounds.size.height/2)-(layoutRect.size.height/2)
-            
             
             let textLayer = CATextLayer(frame: glyphRect, string: (attributedString?.attributedSubstring(from: characterRange))!)
             initialTextLayerAttributes(textLayer)
