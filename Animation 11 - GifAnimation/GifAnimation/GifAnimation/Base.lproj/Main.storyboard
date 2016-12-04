@@ -32,6 +32,9 @@
                             <constraint firstItem="3mH-zC-oHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="tBa-SZ-zZi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="3mH-zC-oHf" id="1f6-bF-OdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
