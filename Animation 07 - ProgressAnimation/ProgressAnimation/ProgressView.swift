@@ -54,27 +54,27 @@ class ProgressView: UIView {
     func setupLayers() {
         
         // Setup progress layer.
-        progressLayer.position = CGPointZero
+        progressLayer.position = CGPoint.zero
         progressLayer.lineWidth = 3.0
         progressLayer.strokeEnd = 0.0
         progressLayer.fillColor = nil
-        progressLayer.strokeColor = UIColor.blackColor().CGColor
+        progressLayer.strokeColor = UIColor.black.cgColor
 
         let radius = CGFloat(self.bounds.height/2) - progressLayer.lineWidth
         let startAngle = CGFloat(-M_PI / 2)
         let endAngle = CGFloat(3 * M_PI / 2)
-        let width = CGRectGetWidth(self.bounds)
-        let height = CGRectGetHeight(self.bounds)
-        let modelCenter = CGPointMake(width / 2, height / 2)
+        let width = self.bounds.width
+        let height = self.bounds.height
+        let modelCenter = CGPoint(x: width / 2, y: height / 2)
         let path = UIBezierPath(arcCenter: modelCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
 
-        progressLayer.path = path.CGPath
+        progressLayer.path = path.cgPath
 
         layer.addSublayer(progressLayer)
         
         // Setup gradient layer.
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: CGRectGetWidth(self.bounds), height: CGRectGetHeight(self.bounds))
-        gradientLayer.colors = [Constants.ColorPalette.teal.CGColor, Constants.ColorPalette.orange.CGColor, Constants.ColorPalette.pink.CGColor]
+        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height)
+        gradientLayer.colors = [Constants.ColorPalette.teal.cgColor, Constants.ColorPalette.orange.cgColor, Constants.ColorPalette.pink.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.mask = progressLayer // Use progress layer as mask for gradient layer.
@@ -89,7 +89,7 @@ class ProgressView: UIView {
         animation.fromValue = fromValue
         animation.toValue = toValue
         
-        progressLayer.addAnimation(animation, forKey: "stroke")
+        progressLayer.add(animation, forKey: "stroke")
         progressLayer.strokeEnd = toValue
     }
 

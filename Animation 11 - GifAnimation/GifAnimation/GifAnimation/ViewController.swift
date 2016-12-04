@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Gifu
+import SwiftGifOrigin
 
 class ViewController: UIViewController {
     
@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     
     struct Constants {
         struct Gifs {
-            static let catVideo = "cat-video.gif"
+            static let catVideo = "cat-video"
         }
     }
     
     // MARK: - Properties
 
-    @IBOutlet var gifImageView: AnimatableImageView!
+    @IBOutlet weak var gifImageView: UIImageView!
     
     // MARK: - View Life Cycle
     
@@ -29,14 +29,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         /*
-         Use third-party library `Gifu` to display gif.
-        */
-        gifImageView.animateWithImage(named: Constants.Gifs.catVideo)
+         Use third-party library `SwiftGif` to display gif.
+         */
+        gifImageView.loadGif(name: Constants.Gifs.catVideo)
     }
     
     // MARK: - Status Bar
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }

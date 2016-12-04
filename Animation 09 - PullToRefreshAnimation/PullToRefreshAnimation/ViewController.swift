@@ -22,7 +22,7 @@ class ViewController: UITableViewController, PullRefreshViewDelegate {
     // MARK: - Properties
     
     var pullRefreshView: PullRefreshView!
-    let kPullRefreshViewHeight: CGFloat = UIScreen.mainScreen().bounds.size.height * 0.22
+    let kPullRefreshViewHeight: CGFloat = UIScreen.main.bounds.size.height * 0.22
     let items = ["Avatar", "Star Wars", "Interstellar", "Predator", "The Martian", "They Live", "Contact", "Alien", "Independence Day", "Signs", "District 9", "Superman Returns"]
     
     // MARK: - View Life Cycle
@@ -38,39 +38,39 @@ class ViewController: UITableViewController, PullRefreshViewDelegate {
     
     // MARK: - UIScrollViewDelegate
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pullRefreshView.scrollViewDidScroll(scrollView)
     }
     
-    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         pullRefreshView.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
     
     // MARK: - UITableViewDataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         cell.textLabel!.text = items[indexPath.row]
         return cell
     }
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Convenience
     
-    func PullRefreshViewDidRefresh(pullRefreshView: PullRefreshView) {
+    func PullRefreshViewDidRefresh(_ pullRefreshView: PullRefreshView) {
         delay(seconds: 2.5) {
             pullRefreshView.endRefreshing()
         }
@@ -85,7 +85,7 @@ class ViewController: UITableViewController, PullRefreshViewDelegate {
     
     func configureNavBar() {
         self.navigationController?.navigationBar.barTintColor = Constants.ColorPalette.pruple
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
     }
     
     func configureTableView() {

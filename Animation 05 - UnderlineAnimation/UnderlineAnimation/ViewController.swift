@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     }
     
     enum Side {
-        case Left
-        case Right
+        case left
+        case right
     }
     
     // MARK: - Properties
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         configureNavBar()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupUnderlineView()
@@ -68,14 +68,14 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func goLeft(sender: UIButton) {
+    @IBAction func goLeft(_ sender: UIButton) {
         
-        animateContraintsForUnderlineView(underlineView, toSide: .Left)
+        animateContraintsForUnderlineView(underlineView, toSide: .left)
     }
     
-    @IBAction func goRight(sender: UIButton) {
+    @IBAction func goRight(_ sender: UIButton) {
         
-        animateContraintsForUnderlineView(underlineView, toSide: .Right)
+        animateContraintsForUnderlineView(underlineView, toSide: .right)
     }
     
     // MARK: - Convenience
@@ -84,56 +84,56 @@ class ViewController: UIViewController {
         underlineView = Underline()
         self.view.addSubview(underlineView)
         
-        let topConstraint = underlineView.topAnchor.constraintEqualToAnchor(optionsBar.bottomAnchor)
-        let heightConstraint = underlineView.heightAnchor.constraintEqualToConstant(2)
+        let topConstraint = underlineView.topAnchor.constraint(equalTo: optionsBar.bottomAnchor)
+        let heightConstraint = underlineView.heightAnchor.constraint(equalToConstant: 2)
         
         let leftButton = optionsBar.arrangedSubviews[0]
-        let centerLeftConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(leftButton.centerXAnchor)
+        let centerLeftConstraint = underlineView.centerXAnchor.constraint(equalTo: leftButton.centerXAnchor)
         centerLeftConstraint.identifier = Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier
         
         // The frame is not set here correctly so I update this value again in viewDidLayoutSubviews.
-        let widthConstraint = underlineView.widthAnchor.constraintEqualToConstant((optionsBar.frame.width / 2.5))
+        let widthConstraint = underlineView.widthAnchor.constraint(equalToConstant: (optionsBar.frame.width / 2.5))
         widthConstraint.identifier = Constants.ConstraintIdentifiers.widthConstraintIdentifier
         
-        NSLayoutConstraint.activateConstraints([topConstraint, heightConstraint, widthConstraint, centerLeftConstraint])
+        NSLayoutConstraint.activate([topConstraint, heightConstraint, widthConstraint, centerLeftConstraint])
     }
     
-    func animateContraintsForUnderlineView(underlineView: UIView, toSide: Side) {
+    func animateContraintsForUnderlineView(_ underlineView: UIView, toSide: Side) {
         
         switch toSide {
-        case .Left:
+        case .left:
             
             for constraint in underlineView.superview!.constraints {
                 if constraint.identifier == Constants.ConstraintIdentifiers.centerRightConstraintIdentifier {
                     
-                    constraint.active = false
+                    constraint.isActive = false
                     
                     let leftButton = optionsBar.arrangedSubviews[0]
-                    let centerLeftConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(leftButton.centerXAnchor)
+                    let centerLeftConstraint = underlineView.centerXAnchor.constraint(equalTo: leftButton.centerXAnchor)
                     centerLeftConstraint.identifier = Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier
                     
-                    NSLayoutConstraint.activateConstraints([centerLeftConstraint])
+                    NSLayoutConstraint.activate([centerLeftConstraint])
                 }
             }
             
-        case .Right:
+        case .right:
             
             for constraint in underlineView.superview!.constraints {
                 if constraint.identifier == Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier {
                     
-                    constraint.active = false
+                    constraint.isActive = false
                     
                     let rightButton = optionsBar.arrangedSubviews[1]
-                    let centerRightConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(rightButton.centerXAnchor)
+                    let centerRightConstraint = underlineView.centerXAnchor.constraint(equalTo: rightButton.centerXAnchor)
                     centerRightConstraint.identifier = Constants.ConstraintIdentifiers.centerRightConstraintIdentifier
                     
-                    NSLayoutConstraint.activateConstraints([centerRightConstraint])
+                    NSLayoutConstraint.activate([centerRightConstraint])
                     
                 }
             }
         }
         
-        UIView.animateWithDuration(0.6, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
             self.view.layoutIfNeeded()
             }, completion: nil)
         
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
     
     func configureNavBar() {
         self.navigationController?.navigationBar.barTintColor = Constants.ColorPalette.green
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
     }
     
 }

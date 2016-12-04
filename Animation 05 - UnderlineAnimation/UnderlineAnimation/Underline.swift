@@ -33,7 +33,7 @@ class Underline: UIView {
         commonInit()
     }
     
-    override class func requiresConstraintBasedLayout() -> Bool {
+    override class var requiresConstraintBasedLayout : Bool {
         return true
     }
     

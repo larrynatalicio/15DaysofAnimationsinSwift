@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureProgressView()
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
 
-    @IBAction func incrementProgress(sender: UIButton) {
+    @IBAction func incrementProgress(_ sender: UIButton) {
         
         guard progressView.curValue < CGFloat(gallon.totalOunces) else {
             return
@@ -50,16 +50,16 @@ class ViewController: UIViewController {
         progressView.range = CGFloat(gallon.totalOunces)
     }
     
-    func numberAsPercentage(number: Double) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .PercentStyle
+    func numberAsPercentage(_ number: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
         formatter.percentSymbol = ""
-        return formatter.stringFromNumber(number)!
+        return formatter.string(from: NSNumber(value: number))!
     }
     
     // MARK: - Status Bar
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 

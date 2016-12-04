@@ -1,6 +1,0 @@
-framework module Gifu {
-  umbrella header "Gifu-umbrella.h"
-
-  export *
-  module * { export * }
-}
